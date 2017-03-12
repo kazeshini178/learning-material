@@ -1,0 +1,9 @@
+{
+  "description": "30 days of react course",
+  "devDependencies": {
+    "babel-eslint": "7.1.1"
+  },
+  "dependencies": {
+    "babel-eslint": "^7.1.1"
+  }
+}

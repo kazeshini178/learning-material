@@ -3,6 +3,7 @@ Basic repo with articles that i would like to learn from and have created a samp
 
 ## Links
 
+- [ ] https://www.fullstackreact.com/30-days-of-react/
 - [ ] https://www.fullstackreact.com/react-daily-ui/
 - [ ] http://www.reactnativeexpress.com/
 - [ ] https://javascript30.com/
