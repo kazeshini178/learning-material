@@ -1,3 +1,5 @@
+import SearchForm from './searchForm';
+
 class Header extends React.Component {
     constructor(props) {
         super(props);
@@ -13,27 +15,28 @@ class Header extends React.Component {
         });
     }
 
-    render() {
-        let searchInputClasses = ["searchInput"];
-        if (this.state.searchVisible) {
-            searchInputClasses.push("active");
-        }
+    handleSearch(val) {
+        this.props.onSearch(val);
+    }
 
+    render() {
         return (
             <div className="header">
                 <div className="fa fa-more"></div>
 
                 <span className="title">{this.props.title}</span>
 
-                <input
-                    type="text"
-                    className={searchInputClasses.join(' ')}
-                    placeholder="Search ..." />
-
+                <SearchForm
+                    searchVisible={this.state.searchVisible}
+                    onSubmit={this.handleSearch.bind(this)} />
                 <div
                     onClick={this.showSearch.bind(this)}
                     className="fa fa-search searchIcon"></div>
             </div>
         )
     }
+}
+
+Header.propTypes = {
+    onSearch: React.propTypes.func
 }
