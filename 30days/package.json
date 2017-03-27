@@ -11,7 +11,28 @@
     "whatwg-fetch": "^2.0.3"
   },
   "devDependencies": {
-    "react-scripts": "0.9.5"
+    "babel-jest": "^19.0.0",
+    "babel-preset-stage-0": "^6.22.0",
+    "enzyme": "^2.8.0",
+    "jest-cli": "^19.0.2",
+    "react-addons-test-utils": "^15.4.2",
+    "react-scripts": "0.9.5",
+    "react-test-renderer": "^15.4.2",
+    "redux-mock-store": "^1.2.2",
+    "sinon": "^2.1.0"
+  },
+  "jest": {
+    "automock": true,
+    "unmockedModulePathPatterns": [
+      "<rootDir>/node_modules/react",
+      "<rootDir>/node_modules/react-dom",
+      "<rootDir>/node_modules/react-addons-test-utils",
+      "<rootDir>/node_modules/fbjs",
+      "<rootDir>/node_modules/enzyme",
+      "<rootDir>/node_modules/sinon",
+      "<rootDir>/node_modules/redux",
+      "<rootDir>/node_modules/react-redux"
+    ]
   },
   "scripts": {
     "start": "react-scripts start",
