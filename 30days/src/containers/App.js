@@ -2,9 +2,11 @@ import React, { Component } from 'react';
 import 'whatwg-fetch';
 import '../App.css';
 
-import { HashRouter, Route, } from 'react-router-dom';
+import { Router, Route, hashHistory, IndexRoute } from 'react-router';
 import { Index } from './Index';
+import { Home } from '../views/Home';
 
+const About = () => (<div><h1>About</h1></div>);
 
 class App extends Component {
   render() {
@@ -15,10 +17,13 @@ class App extends Component {
     }
 
     return (
-      <HashRouter createElement={createElement}>
+      <Router history={hashHistory} createElement={createElement}>
         <Route path="/" component={Index} >
+          <IndexRoute component={Home} />
+          <Route path="home" component={Home} />
+          <Route path="about" component={About} />
         </Route>
-      </HashRouter>
+      </Router>
     );
   }
 }

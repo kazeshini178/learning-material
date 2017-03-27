@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-export const Home = (props) => {
+export const Home = ({ currentTime, actions }) => {
     return (
         <div className="content">
             <h1>Welcome home!</h1>
