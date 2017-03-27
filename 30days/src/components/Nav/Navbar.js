@@ -1,18 +1,25 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export const Navbar = () => (
+export const Navbar = ({ currentUser }) => (
   <div className="navbar">
     <Link
       className="link"
       to="/home">
-        Home
+      Home
     </Link>
     <Link
       className="link"
       to="/about">
-        About
+      About
     </Link>
+    {currentUser.loggedIn ?
+      <Link
+        to="/logout"
+        className="link" >Logout</Link> :
+      <Link
+        to="/login"
+        className="link" >Login</Link>}
   </div>
 );
 

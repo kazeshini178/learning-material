@@ -1,15 +1,17 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
+import { connect } from 'react-redux';
 import { Navbar } from '../components/Nav/Navbar';
+import { Home } from '../views/Home';
 
-const Home = () => (<div><h1>Welcome Home</h1></div>);
 const About = () => (<div><h1>About</h1></div>);
 
 export class Index extends React.Component {
     render() {
+        const { currentUser } = this.props;
         return (
             <div className="app">
-                <Navbar />
+                <Navbar currentUser={currentUser} />
                 <div className="page">
                     <Route path="/home" component={Home} />
                     <Route path="/about" component={About} />
@@ -19,4 +21,6 @@ export class Index extends React.Component {
     }
 }
 
-export default Index;
+export default connect(state => ({
+    currentUser: state.currentUser
+}))(Index);
